@@ -1,0 +1,22 @@
+name: load raw data
+description: load and tranform data for train
+inputs:
+  - {name: file_name, type: String, description: 'input raw file name.'}
+  - {name: data_dir, type: String, description: 'absolute dir of local path.'}
+
+outputs:
+  - {name: x_train_path, type: String, description: 'train feature data path.'}
+  - {name: x_test_path, type: String, description: 'feature data path.'}
+  - {name: y_train_path, type: String, description: 'train label data path.'}
+  - {name: y_test_path, type: String, description: 'test label data path.'}
+implementation:
+  container:
+    image: harbor-qzm.stonewise.cn/proxy_cache/kubeflow/mnist-load_data:v0.0.4
+    args: [
+      --file_name, {inputValue: file_name},
+      --data_dir, {inputValue: data_dir},
+      --x_train_path_file, {outputPath: x_train_path},
+      --x_test_path_file, {outputPath: x_test_path},
+      --y_train_path_file, {outputPath: y_train_path},
+      --y_test_path_file, {outputPath: y_test_path}
+    ]

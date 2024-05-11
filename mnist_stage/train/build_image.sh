@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker build -t mnist-train:v0.0.1 .
+sudo docker build -f Dockerfile -t harbor.stonewise.cn/kubeflow/mnist-train:v0.0.4 ./

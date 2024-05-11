@@ -1,0 +1,18 @@
+name: predict number
+description: get predict by trained model.
+inputs:
+  - {name: model_path, type: String, description: 'trained model path.'}
+  - {name: x_test_path, type: String, description: 'test feature dataset path.'}
+  - {name: y_test_path, type: String, description: 'test label dataset path.'}
+
+outputs:
+  - {name: result_path, type: String, description: 'predict result file, with *.csv, file absolute path.'}
+implementation:
+  container:
+    image: harbor-qzm.stonewise.cn/proxy_cache/kubeflow/mnist-predict:v0.0.4
+    args: [
+      --model_path, {inputValue: model_path},
+      --x_test_path, {inputValue: x_test_path},
+      --y_test_path, {inputValue: y_test_path},
+      --result_path_file, {outputPath: result_path}
+    ]

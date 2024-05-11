@@ -1,0 +1,20 @@
+name: train model
+description: trained a classfier model.
+inputs:
+  - {name: x_train_path, type: String, description: 'train feature dataset path.'}
+  - {name: x_test_path, type: String, description: 'test feature dataset path.'}
+  - {name: y_train_path, type: String, description: 'train label dataset path.'}
+  - {name: y_test_path, type: String, description: 'test label dataset path.'}
+
+outputs:
+  - {name: model_path, type: String, description: 'trained model path.'}
+implementation:
+  container:
+    image: harbor-qzm.stonewise.cn/proxy_cache/kubeflow/mnist-train:v0.0.4
+    args: [
+      --x_train_path, {inputValue: x_train_path},
+      --x_test_path, {inputValue: x_test_path},
+      --y_train_path, {inputValue: y_train_path},
+      --y_test_path, {inputValue: y_test_path},
+      --output_model_path_file, {outputPath: model_path}
+    ]

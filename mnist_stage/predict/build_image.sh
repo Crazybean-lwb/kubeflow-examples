@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker build -t mnist-predict:v0.0.1 .
+sudo docker build -f Dockerfile -t harbor.stonewise.cn/kubeflow/mnist-predict:v0.0.4 ./
