@@ -10,7 +10,7 @@ outputs:
   - {name: model_path, type: String, description: 'trained model path.'}
 implementation:
   container:
-    image: harbor-qzm.stonewise.cn/proxy_cache/kubeflow/mnist-train:v0.0.4
+    image: kubeflow/mnist-train:v0.0.4
     args: [
       --x_train_path, {inputValue: x_train_path},
       --x_test_path, {inputValue: x_test_path},

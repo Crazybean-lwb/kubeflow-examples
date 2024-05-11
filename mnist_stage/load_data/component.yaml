@@ -11,7 +11,7 @@ outputs:
   - {name: y_test_path, type: String, description: 'test label data path.'}
 implementation:
   container:
-    image: harbor-qzm.stonewise.cn/proxy_cache/kubeflow/mnist-load_data:v0.0.4
+    image: kubeflow/mnist-load_data:v0.0.4
     args: [
       --file_name, {inputValue: file_name},
       --data_dir, {inputValue: data_dir},

@@ -20,7 +20,7 @@
 
 ## Container image
 
-harbor-qzm.stonewise.cn/proxy_cache/kubeflow/mnist-load_data:v0.0.4
+kubeflow/mnist-load_data:v0.0.4
 
 ## Usage
 

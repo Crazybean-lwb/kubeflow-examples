@@ -1,4 +1,4 @@
-FROM harbor-qzm.stonewise.cn/proxy_cache/kubeflow/tensorflow:1.14.0-py3.6-cpu
+FROM kubeflow/tensorflow:1.14.0-py3.6-cpu
 
 COPY requirements.txt ./
 ADD predict.py .

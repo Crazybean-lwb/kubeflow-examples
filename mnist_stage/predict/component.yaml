@@ -9,7 +9,7 @@ outputs:
   - {name: result_path, type: String, description: 'predict result file, with *.csv, file absolute path.'}
 implementation:
   container:
-    image: harbor-qzm.stonewise.cn/proxy_cache/kubeflow/mnist-predict:v0.0.4
+    image: kubeflow/mnist-predict:v0.0.4
     args: [
       --model_path, {inputValue: model_path},
       --x_test_path, {inputValue: x_test_path},

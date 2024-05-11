@@ -16,7 +16,7 @@
 
 ## Container image
 
-harbor-qzm.stonewise.cn/proxy_cache/kubeflow/mnist-predict:v0.0.4
+kubeflow/mnist-predict:v0.0.4
 
 ## Usage
 
